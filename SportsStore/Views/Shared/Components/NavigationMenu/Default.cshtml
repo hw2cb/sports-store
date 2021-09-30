@@ -1,0 +1,10 @@
+﻿@model IEnumerable<string>
+<div class="navbar">
+    <a class="btn navbar-brand" asp-action="List" asp-controller="Product" asp-route-category="">SportsStore</a>
+    @foreach (var category in Model)
+    {
+
+        <a class="btn @(category == ViewBag.SelectedCategory? "btn-primary":"btn-secondary")" asp-action="List" asp-controller="Product" asp-route-category="@category" asp-route-productPage="1">@category</a>
+    }
+</div>
+

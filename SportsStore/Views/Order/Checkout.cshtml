@@ -1,0 +1,55 @@
+﻿@model Order
+@{
+    ViewData["Title"] = "Оформление заказа";
+}
+
+<h2>Оформить заказ сейчас</h2>
+<p>Пожалуйста заполните поля, что бы мы смогли отправить ваш заказ!</p>
+<div asp-validation-summary="All" class="text-danger"></div>
+<form asp-action="Checkout" asp-controller="Order" method="post">
+    <h3>Доставить </h3>
+    <div class="form-group">
+        <label>Имя:</label>
+        <input asp-for="Name" class="form-control" />
+    </div>
+    <h3>Адрес</h3>
+    <div class="form-group">
+        <p>Введите свой адрес в Поле 1, если нужно еще что-то указать, вы можете это сделать с помощью других двух полей</p>
+        <label>Поле 1:</label>
+        <input asp-for="Line1" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Поле 2:</label>
+        <input asp-for="Line2" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Поле 3:</label>
+        <input asp-for="Line3" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Город:</label>
+        <input asp-for="City" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Область/штат:</label>
+        <input asp-for="Region" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Почтовый индекс:</label>
+        <input asp-for="Zip" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label>Страна:</label>
+        <input asp-for="Country" class="form-control" />
+    </div>
+    <h3>Дополнтельные опции</h3>
+    <div class="checkbox">
+        <label>
+            <input asp-for="GiftWrap" />Подарочная упоковка для вашего заказа
+        </label>
+    </div>
+    <div>
+        <input class="btn btn-primary" type="submit" value="Завершить заказ" />
+    </div>
+</form>
+

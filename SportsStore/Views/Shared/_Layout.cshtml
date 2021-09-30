@@ -1,0 +1,30 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" asp-href-include="/lib/bootstrap/dist/**/*.min.css" asp-href-exclude="**/*-reboot*, **/*-grid*"/>
+    <link rel="stylesheet" asp-href-include="/lib/font-awesome/css/*.css"/>
+    <title>@ViewData["Title"] - SportsStore</title>
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                @await Component.InvokeAsync("NavigationMenu")
+                @await Component.InvokeAsync("CartSummary")
+            </div>
+            <div class="col-sm">
+                @RenderBody()
+            </div>
+            <div class="col-sm">
+
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2021 - SportsStore</p>
+    </footer>
+</body>
+</html>
